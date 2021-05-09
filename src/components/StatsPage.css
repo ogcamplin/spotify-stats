@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari:normal,bold,bolditalic,italic');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+.nav-item {
+    font-weight: 800;
+    color: #ffffff;
+    border-bottom: 2px solid transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-link {
+    outline: 0;
+}
+
+.nav-item > .nav-link {
+    color: #ffffff;
+}
+
+.nav > .nav-item > .active {
+    border-bottom: 2px solid #ffffff;
+}
+
+.btn-primary {
+    background-color: #F45866;
+    border-color: #F45866;
+}
+
+.btn-primary:hover {
+    background-color: #F45866;
+    border-color: #F45866;
+}
+
+.show > .btn-primary.dropdown-toggle {
+    box-shadow: #F45866;
+    background-color: #F45866;
+    border-color: #F45866;
+    background-color: #F45866;
+}
+
+
+.time-dropdown {
+    font-family: 'Fredoka One';
+}
+
+.pg-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Fredoka One';
+    margin: 0;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.track-stats {
+    font-family: 'Manjari';
+    margin-bottom: 100px;
+}
+
+.list-group-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.rank-num {
+    border-radius: 6px;
+    border: 4px solid rgba(170,135,222,1);
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(170,135,222,1);
+    height: 30px; 
+    width: 30px;
+}
+
+.track-img {
+    border-radius: 10px;
+}

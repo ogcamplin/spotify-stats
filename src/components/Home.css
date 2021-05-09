@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari:normal,bold,bolditalic,italic');
+
+
+.home-page {
+    font-family: 'Manjari';
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.globe-image {
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+.heading-container {
+    border-bottom: #ffffff 1px solid;
+    margin-right: 50%;
+}
+
+.heading-1 {
+    color: #ffffff;
+    font-size: 80px;
+    margin: 0;
+}
+
+.heading-2 {
+    color: #d9d9d9;
+    font-size: 60px;
+    margin: 0;
+}
+
+.heading-3 {
+    color: #ffffff;
+    font-size: 40px;
+    margin: 0;
+}
+
+.start-button {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.start-button:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.chevron {
+    margin: 0 10 5 0;
+}
+
+@media only screen and (max-width: 675px) {
+    .main-blurb {
+        font-size: 50px;
+    }
+
+    .sub-blurb {
+        font-size: 40px;
+    }
+
+    .sub-blurb, .sub-blurb, .start-button {
+        font-size: 30px;
+    }
+
+    .start-button {
+        font-size: 20px;
+    }
+}

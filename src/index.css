@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari:normal,bold,bolditalic,italic');
+
+html {
+  font-family: 'Manjari';
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(126,85,180);
+  background: linear-gradient(0deg, rgba(126,85,180,1) 0%, rgba(170,135,222,1) 100%) no-repeat center center fixed;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
