@@ -27,9 +27,9 @@ const TrackStatistics = () => {
                     <h1 className='display-6 pg-title'>TRACKS</h1>
 
                     <div className='dropright ml-4'>
-                        <button class='time-dropdown btn btn-lg btn-primary dropdown-toggle' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        <div class='time-dropdown btn btn-lg btn-primary dropdown-toggle' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                             { timeFilter }
-                        </button>
+                        </div>
                         <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
                             <NavLink className='dropdown-item' to={`${match.url}/short`} onClick={() => setTimeFilter('1 Month')}>1 Month</NavLink>
                             <NavLink className='dropdown-item' to={`${match.url}/medium`}  onClick={() => setTimeFilter('6 Months')}>6 Months</NavLink>

@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "caniuse-lite": "^1.0.30001223",
     "framer-motion": "^2.9.5",
     "jquery": "^3.5.1",
     "react": "^17.0.1",
