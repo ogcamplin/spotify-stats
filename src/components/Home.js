@@ -32,7 +32,7 @@ const Home = () => {
 
     useEffect(() => {
         fetchUser(context, setLoading)
-    });
+    }, [isAuthed, context]);
 
     return ( 
         <div className='home-page container-lg d-flex flex-column'>

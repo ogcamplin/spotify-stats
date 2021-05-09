@@ -2,7 +2,7 @@ import Spotify from 'spotify-web-api-js';
 
 const authorise = (context, params, setLoading) => {
     const { dispatch, state } = context;
-    const { access_token, refresh_token, expires_in } = params;
+    const { access_token, expires_in } = params;
 
     if(!state.isAuthed) { 
         const authTime = new Date();
@@ -14,8 +14,8 @@ const authorise = (context, params, setLoading) => {
     }
 }
 
-const reauthorise = (context, setLoading) => {
-    const { dispatch, state } = context;
+const reauthorise = (context) => {
+    const { dispatch } = context;
 
     const token = localStorage.getItem('access_token');
 

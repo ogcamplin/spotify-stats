@@ -20,7 +20,7 @@ const ArtistStatistics = () => {
         if(!context.state.isAuthed) {
             setLoading(false);
         }
-    })
+    }, [isLoading, context])
 
     const variants = {
         hover: {

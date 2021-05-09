@@ -44,7 +44,7 @@ const App = () => {
         setLoading(false);
       }
       handleCallback();
-  }) 
+  }, [context, state]) 
 
   /**
    * Gets the access token from querystring of URL for client side use.

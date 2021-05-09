@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { store } from '../context/store';
 import './TopSongs.css';
 
