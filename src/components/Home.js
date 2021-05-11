@@ -4,8 +4,18 @@ import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
 import { store } from '../context/store';
 import { fetchUser } from '../context/actions'
-
 import Spinner from '../components/Spinner'
+
+const scopes = 'user-top-read user-read-private user-read-recently-played';
+
+const doAuthenticate = () => {
+    console.log(process.env.REDIRECT_URI)
+    window.location.href = 'https://accounts.spotify.com/authorize?'
+            +`client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}`
+            +'&response_type=token'
+            +`&redirect_uri=${encodeURIComponent(process.env.REACT_APP_REDIRECT_URI)}`
+            +'&scope=' + encodeURIComponent(scopes)
+}
 
 const StartButton = () => {
     const variants = {
@@ -17,13 +27,14 @@ const StartButton = () => {
 
     return (
         <motion.div variants={ variants }  className='text-center mt-4' whileHover='hover'>
-            <motion.a className='start-button' href='http://192.168.1.90:5000/login'>
+            <motion.button className='start-button' onClick={() => doAuthenticate()}>
                 Get started
                 <motion.img className='chevron' src={ process.env.PUBLIC_URL + '/arrow_right.png'} height='30' width='30' alt='chevron' />
-            </motion.a>
+            </motion.button>
         </motion.div>
     )
 }
+
 
 const Home = () => {
     const context = useContext(store);

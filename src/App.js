@@ -22,9 +22,9 @@ const App = () => {
   const [ isLoading, setLoading ] = useState(true);
 
   useEffect(() => { 
-      /**
-       * Tries to reauthorise user if they are not logged in.
-       */
+      // /**
+      //  * Tries to reauthorise user if they are not logged in.
+      //  */
       if(!state.isAuthed) {
         reauthorise(context);
         setLoading(false);
