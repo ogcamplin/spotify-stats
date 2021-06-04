@@ -20,8 +20,7 @@ const doAuthenticate = () => {
 const StartButton = () => {
     const variants = {
         hover: {
-            scale: 1.1,
-            originX: 0.01
+            scale: 1.1
         }
     }
 
@@ -29,7 +28,6 @@ const StartButton = () => {
         <motion.div variants={ variants }  className='text-center mt-4' whileHover='hover'>
             <motion.button className='start-button' onClick={() => doAuthenticate()}>
                 Get started
-                <motion.img className='chevron' src={ process.env.PUBLIC_URL + '/arrow_right.png'} height='30' width='30' alt='chevron' />
             </motion.button>
         </motion.div>
     )

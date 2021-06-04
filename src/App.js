@@ -18,7 +18,7 @@ import Footer from './components/Footer/Footer';
 /**
  * Base container component for spotify stats app
  */
-const App = () => {
+const App = (props) => {
   const context = useContext(store);
   const { state } = context;
   const [ isLoading, setLoading ] = useState(true);
@@ -44,6 +44,7 @@ const App = () => {
           authorise(context, params, setLoading);
         }
         setLoading(false);
+        
       }
       handleCallback();
   }, [context, state]) 
