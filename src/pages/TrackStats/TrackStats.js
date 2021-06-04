@@ -5,14 +5,12 @@ import { fetchTracks, fetchRecent } from '../../context/actions.js'
 import '../StatsPage.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import TracksContainer from '../../components/TracksContainer/TracksContainer';
-import Spinner from '../../components/Spinner/Spinner';
 import { motion } from 'framer-motion';
 
 const TrackStatistics = () => {
     const context = useContext(store);
     const match = useRouteMatch();
     const [ isLoading, setLoading ] = useState(true);
-    const [ timeFilter, setTimeFilter ] = useState('1 Month');
 
     useEffect(() => {
         fetchTracks(context, setLoading);

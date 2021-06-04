@@ -48,7 +48,7 @@ const App = (props) => {
         
       }
       handleCallback();
-  }, [context, state]) 
+  }, [context, state, props]) 
 
   /**
    * Gets the access token from querystring of URL for client side use.

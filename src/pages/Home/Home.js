@@ -68,7 +68,7 @@ const Home = () => {
                         <div className='my-5 d-flex flex-column'>
                             <div className='d-flex flex-row justify-content-between'>
                                 <h1 className='heading-1 text-lg-start'>Welcome.</h1>
-                                <img className='mr-5' src={ process.env.PUBLIC_URL + '/sound.png'} height='400' width='400' />
+                                <img className='mr-5' src={ process.env.PUBLIC_URL + '/sound.png'} alt='sound' height='400' width='400' />
                             </div>
                             <div className='d-flex flex-column'>
                                 <h4>
