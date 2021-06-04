@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { store } from '../context/store';
+import { store } from '../../context/store';
 import { motion } from 'framer-motion'
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap/dist/css/bootstrap.css'

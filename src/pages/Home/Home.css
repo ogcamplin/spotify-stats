@@ -27,12 +27,18 @@
 .heading-1 {
     color: #ffffff;
     font-size: 80px;
+    margin: auto;
+}
+
+h2 {
+    color: #d9d9d9;
+    font-size: 60px;
     margin: 0;
 }
 
-.heading-2 {
+h4 {
     color: #d9d9d9;
-    font-size: 60px;
+    font-size: 40px;
     margin: 0;
 }
 
@@ -43,12 +49,13 @@
 }
 
 .start-button {
-    color: #ffffff;
     font-size: 40px;
+    background: none;
+    border: none;
+    color: #fff;
 }
 
 .start-button:hover {
-    color: #ffffff;
     text-decoration: none;
 }
 

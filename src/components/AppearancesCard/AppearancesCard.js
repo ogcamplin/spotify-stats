@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion';
 import { XAxis, YAxis, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from 'recharts';
-import { store } from '../context/store';
+import { store } from '../../context/store';
 
 const getAppearances = (tracks) => {
     let artists = tracks.flatMap(t => t.artists);

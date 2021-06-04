@@ -2,9 +2,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css'
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
-import { store } from '../context/store';
-import { fetchUser } from '../context/actions'
-import Spinner from '../components/Spinner'
+import { store } from '../../context/store';
+import { fetchUser } from '../../context/actions'
+import Spinner from '../../components/Spinner/Spinner'
 
 const scopes = 'user-top-read user-read-private user-read-recently-played';
 
@@ -67,10 +67,18 @@ const Home = () => {
                             </motion.div>
                         </motion.div> 
                     ) : (
-                        <div className='my-5'>
-                            <h1 className='heading-1 text-lg-start'>Welcome.</h1>
-                            <h2 className='heading-2'>Unlock the power, <br /> see your spotify listening stats</h2>
-                            <StartButton />
+                        <div className='my-5 d-flex flex-column'>
+                            <div className='d-flex flex-row justify-content-between'>
+                                <h1 className='heading-1 text-lg-start'>Welcome.</h1>
+                                <img className='mr-5' src={ process.env.PUBLIC_URL + '/sound.png'} height='400' width='400' />
+                            </div>
+                            <div className='d-flex flex-column'>
+                                <h4>
+                                    Spotify Stats provides a platform to see your top tracks and artists from your listening
+                                    history on spotify!  
+                                </h4>                       
+                                <StartButton />
+                            </div>
                         </div>
                     )
             }

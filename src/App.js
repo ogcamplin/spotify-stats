@@ -3,15 +3,17 @@ import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import { store } from './context/store';
 import {authorise, reauthorise} from './context/actions'
 
+/* Pages */
+import Home from './pages/Home/Home';
+import ArtistStatistics from './pages/ArtistStats/ArtistStats';
+import TrackStatistics from './pages/TrackStats/TrackStats';
+import Privacy from './pages/Privacy'
+
 /* Components */
-import Home from './components/Home';
-import Navbar from './components/Navbar'; 
 import PrivateRoute from './PrivateRoute';
-import ArtistStatistics from './components/ArtistStats';
-import TrackStatistics from './components/TrackStats';
-import Footer from './components/Footer';
-import Privacy from './components/Privacy'
-import Spinner from'./components/Spinner';
+import Navbar from './components/NavBar/Navbar'; 
+import Spinner from'./components/Spinner/Spinner';
+import Footer from './components/Footer/Footer';
 
 /**
  * Base container component for spotify stats app
@@ -22,9 +24,9 @@ const App = () => {
   const [ isLoading, setLoading ] = useState(true);
 
   useEffect(() => { 
-      // /**
-      //  * Tries to reauthorise user if they are not logged in.
-      //  */
+      /**
+       * Tries to reauthorise user if they are not logged in.
+       */
       if(!state.isAuthed) {
         reauthorise(context);
         setLoading(false);
