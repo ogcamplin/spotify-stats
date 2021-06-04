@@ -42,6 +42,7 @@ const App = (props) => {
 
         if(params.access_token) {
           authorise(context, params, setLoading);
+          props.history.push('/')
         }
         setLoading(false);
         
