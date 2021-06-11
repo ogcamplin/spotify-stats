@@ -22,13 +22,17 @@ const ArtistsContainer = () => {
         setExpanded(null);
     }
 
+    useEffect(() => {
+        setExpanded(null)
+    }, [range])
+
     return (
         <motion.div key={Math.random()} className='row'>
             { isExpanded ? ( <ArtistExpanded artist={isExpanded} onCollapse={collapse} /> ) 
             : 
             (
-            artists.map((artist, i) => (
-                <ArtistCollapsed artist={artist} rank={i+1} onExpand={expand} range={range} />
+                artists.map((artist, i) => (
+                    <ArtistCollapsed artist={artist} rank={i+1} onExpand={expand} range={range} />
             ))) }
         </motion.div>
     )
@@ -53,10 +57,8 @@ const ArtistCollapsed = ({artist, rank, onExpand, range }) => {
             opacity: 0, scale: 0.8
         }
     }
-    console.log(rank + range)
 
-    return (
-        
+    return ( 
         <div key={rank} className='col-lg-3 col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center mt-5'>
             <motion.div variants={variants} onClick={()=>onExpand(artist)} ref={ref} initial='hidden' animate={controls} >
                 <motion.div className='artist-rank'><h1>{ rank }</h1></motion.div>

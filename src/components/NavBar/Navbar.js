@@ -25,14 +25,14 @@ const Navbar = () => {
 
                 <div className='collapse navbar-collapse' id='collapseToggle'>
                     <div className='navbar-nav'>
-                        <NavLink className="nav-link" to="/tracks">
+                        <NavLink className="nav-link" to="/tracks/short">
                             <motion.div className='nav-text' whileHover={{ scale: 1.1 }}>
                                 <img src={ process.env.PUBLIC_URL + '/track.png' } alt='track' className='nav-img' />
                                 Tracks
                             </motion.div>
                         </NavLink>
 
-                        <NavLink className="nav-link" to="/artists">
+                        <NavLink className="nav-link" to="/artists/short">
                             <motion.div className='nav-text' whileHover={{ scale: 1.1}}>
                                 <img src={ process.env.PUBLIC_URL + '/artist.png' } alt='artist' className='nav-img' />
                                 Artists

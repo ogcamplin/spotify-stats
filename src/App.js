@@ -48,6 +48,7 @@ const App = (props) => {
         
       }
       handleCallback();
+      document.body.style.zoom = '70%';
   }, [context, state, props]) 
 
   /**

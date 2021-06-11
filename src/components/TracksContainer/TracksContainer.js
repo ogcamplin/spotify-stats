@@ -22,6 +22,10 @@ const TracksContainer = () => {
         setExpanded(null);
     }
 
+    useEffect(() => {
+        setExpanded(null)
+    }, [range])
+
     return (
         <motion.div key={Math.random()} className='row'>
             { isExpanded ? ( <TrackExpanded track={isExpanded} onCollapse={collapse} /> ) 

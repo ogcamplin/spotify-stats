@@ -50,8 +50,7 @@ const ArtistStatistics = () => {
             </motion.div>
 
             <Switch>
-                <Route path={`${match.path}/:range`} component={ ArtistsContainer }/>   
-                <Route path={`${match.path}`} component={ ArtistsContainer }/>
+                <Route path={`${match.path}/:range`} component={ ArtistsContainer }/>
             </Switch>
         </div>    
     );

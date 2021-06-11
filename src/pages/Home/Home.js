@@ -9,7 +9,6 @@ import Spinner from '../../components/Spinner/Spinner'
 const scopes = 'user-top-read user-read-private user-read-recently-played';
 
 const doAuthenticate = () => {
-    console.log(process.env.REDIRECT_URI)
     window.location.href = 'https://accounts.spotify.com/authorize?'
             +`client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}`
             +'&response_type=token'

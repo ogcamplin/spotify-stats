@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { store } from '../../context/store';
 import { NavLink, useRouteMatch, Route, Switch } from 'react-router-dom';
-import { fetchTracks, fetchRecent } from '../../context/actions.js'
+import { fetchTracks } from '../../context/actions.js'
 import '../StatsPage.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import TracksContainer from '../../components/TracksContainer/TracksContainer';
@@ -14,7 +14,9 @@ const TrackStatistics = () => {
 
     useEffect(() => {
         fetchTracks(context, setLoading);
-        fetchRecent(context, setLoading);
+        if(!context.state.isAuthed) {
+            setLoading(false);
+        }
     }, [setLoading, context])
 
     const variants = {
