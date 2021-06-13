@@ -2,6 +2,8 @@ import { useEffect, useContext, useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import { store } from './context/store';
 import {authorise, reauthorise} from './context/actions'
+import ReactGA from 'react-ga';
+import { createBrowserHistory } from 'history';
 
 /* Pages */
 import Home from './pages/Home/Home';
@@ -15,6 +17,14 @@ import Navbar from './components/NavBar/Navbar';
 import Spinner from'./components/Spinner/Spinner';
 import Footer from './components/Footer/Footer';
 
+const trackingId = 'UA-199356526-1'
+const history = createBrowserHistory();
+ReactGA.initialize(trackingId);
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
+
 /**
  * Base container component for spotify stats app
  */
@@ -22,7 +32,7 @@ const App = (props) => {
   const context = useContext(store);
   const { state } = context;
   const [ isLoading, setLoading ] = useState(true);
-
+  
   useEffect(() => { 
       /**
        * Tries to reauthorise user if they are not logged in.
