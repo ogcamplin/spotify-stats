@@ -1,11 +1,15 @@
+/* Components */
 import React, { useContext, useEffect, useState } from 'react';
-import ArtistsContainer from '../../components/ArtistContainer/ArtistsContainer';
 import { NavLink, useRouteMatch, Route, Switch } from 'react-router-dom'
-import { store } from '../../context/store';
-import 'bootstrap/dist/css/bootstrap.css';
+import { store } from '../context/store';
 import { motion } from 'framer-motion';
+import { fetchArtists } from '../context/actions';
+import ArtistsContainer from './ArtistsContainer';
+
+/* Styles */
+import 'bootstrap/dist/css/bootstrap.css';
 import '../StatsPage.css'
-import { fetchArtists } from '../../context/actions';
+
 
 const ArtistStatistics = () => {
     const context = useContext(store);
@@ -34,8 +38,8 @@ const ArtistStatistics = () => {
         ( <div className='spinner-border' style = {{ position: "fixed", top: "50%", left: "50%", color: '#ffffff' }} /> )
         : 
         (
-        <div className='container track-stats'>
-            <h1 className='display-6 pg-title my-5'>ARTISTS</h1>
+        <div className='container track-stats my-5'>
+            <h1 className='display-6 pg-title py-2'>ARTISTS</h1>
 
             <motion.div className='nav nav-fill justify-content-center'>
                 <motion.div className='nav-item'>

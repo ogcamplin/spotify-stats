@@ -1,11 +1,14 @@
+/* Components */
 import React, { useEffect, useContext, useState } from 'react';
-import { store } from '../../context/store';
+import { store } from '../context/store';
 import { NavLink, useRouteMatch, Route, Switch } from 'react-router-dom';
-import { fetchTracks } from '../../context/actions.js'
+import { fetchTracks } from '../context/actions.js'
+import { motion } from 'framer-motion';
+import TracksContainer from './TracksContainer';
+
+/* Styles */
 import '../StatsPage.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import TracksContainer from '../../components/TracksContainer/TracksContainer';
-import { motion } from 'framer-motion';
 
 const TrackStatistics = () => {
     const context = useContext(store);
@@ -31,8 +34,8 @@ const TrackStatistics = () => {
         ( <div className='spinner-border' style = {{ position: "fixed", top: "50%", left: "50%", color: '#ffffff' }} /> )
         : 
         (
-        <div className='container track-stats'>
-            <h1 className='display-6 pg-title my-5'>TRACKS</h1>
+        <div className='container track-stats my-5'>
+            <h1 className='display-6 pg-title py-2'>TRACKS</h1>
 
             <motion.div className='nav nav-fill justify-content-center'>
                 <motion.div className='nav-item'>

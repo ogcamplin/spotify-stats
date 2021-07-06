@@ -1,21 +1,24 @@
+/* Components */
 import { useContext, useEffect, useState } from 'react';
-import { store } from '../../context/store';
+import { store } from '../context/store';
 import { useParams } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+
+/* Styles */
+import 'bootstrap/dist/css/bootstrap.css';
 import '../StatItem.css';
 
-const TracksContainer = () => {
+const ArtistsContainer = () => {
     const context = useContext(store);
     const { range } = useParams();
-    const { top_tracks } = context.state;
+    const { top_artists } = context.state;
 
-    const tracks = range ? top_tracks[range] : top_tracks['short']; 
+    const artists = range ? top_artists[range] : top_artists['short']; 
     const [isExpanded, setExpanded] = useState(null);
     
-    const expand = (track) => {
-        setExpanded(track);
+    const expand = (artist) => {
+        setExpanded(artist);
     }
 
     const collapse = () => {
@@ -28,18 +31,18 @@ const TracksContainer = () => {
 
     return (
         <motion.div key={Math.random()} className='row'>
-            { isExpanded ? ( <TrackExpanded track={isExpanded} onCollapse={collapse} /> ) 
+            { isExpanded ? ( <ArtistExpanded artist={isExpanded} onCollapse={collapse} /> ) 
             : 
             (
-            tracks.map((track, i) => (
-                <TrackCollapsed track={track} rank={i+1} onExpand={expand} range={range} />
+                artists.map((artist, i) => (
+                    <ArtistCollapsed artist={artist} rank={i+1} onExpand={expand} range={range} />
             ))) }
         </motion.div>
     )
 }
 
 
-const TrackCollapsed = ({track, rank, onExpand, range }) => {
+const ArtistCollapsed = ({artist, rank, onExpand, range }) => {
     const controls = useAnimation();
     const [ref, inView ] = useInView();
 
@@ -58,10 +61,9 @@ const TrackCollapsed = ({track, rank, onExpand, range }) => {
         }
     }
 
-    return (
-        
+    return ( 
         <div key={rank} className='col-lg-3 col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center mt-5'>
-            <motion.div variants={variants} onClick={()=>onExpand(track)} ref={ref} initial='hidden' animate={controls} >
+            <motion.div variants={variants} onClick={()=>onExpand(artist)} ref={ref} initial='hidden' animate={controls} >
                 <motion.div className='artist-rank'><h1>{ rank }</h1></motion.div>
                 <motion.div className='artist-card card'>
                     <motion.img className='card-img-top artist-card-img' whileHover={{ opacity: 0.6,
@@ -69,8 +71,8 @@ const TrackCollapsed = ({track, rank, onExpand, range }) => {
                         duration: 0.3,
                         delay: 0
                     }}} 
-                    src={ track.album.images[1].url } alt='artist image'/>
-                    <motion.h5 className='text-center card-title artist-title'>{ track.name }</motion.h5>
+                    src={ artist.images[1].url } alt='artist image'/>
+                    <motion.h5 className='text-center card-title artist-title'>{ artist.name }</motion.h5>
                 </motion.div>
             </motion.div>
         </div>
@@ -78,12 +80,13 @@ const TrackCollapsed = ({track, rank, onExpand, range }) => {
 
 }
 
-const TrackExpanded = ({track, onCollapse}) => {
+const ArtistExpanded = ({artist, onCollapse}) => {
     return ( 
         <motion.div className='container artist-expanded' initial={{ opacity: 0 }} animate={{ opacity: 1 }}  onClick={()=>onCollapse()} >
-            <h1>{track.name}</h1>
+            <h1>{artist.name}</h1>
         </motion.div>
     )
 }
 
-export default TracksContainer;
+
+export default ArtistsContainer;

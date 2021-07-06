@@ -1,6 +1,7 @@
+/* Components */
 import React, { useContext } from 'react'
 import { Redirect, Route } from 'react-router-dom'
-import { store } from './context/store'
+import { store } from '../context/store'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import App from './App';
+import './index.css';
+import App from './application/App';
 import { StateProvider } from './context/store';
 import reportWebVitals from './reportWebVitals';
 

@@ -2,13 +2,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './Home.css'
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
-import { store } from '../../context/store';
-import { fetchUser } from '../../context/actions'
-import Spinner from '../../components/Spinner/Spinner'
-
-const scopes = 'user-top-read user-read-private user-read-recently-played';
+import { store } from '../context/store';
+import { fetchUser } from '../context/actions'
+import Spinner from '../application/Spinner/Spinner'
 
 const doAuthenticate = () => {
+    const scopes = 'user-top-read user-read-private user-read-recently-played';
+
     window.location.href = 'https://accounts.spotify.com/authorize?'
             +`client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}`
             +'&response_type=token'

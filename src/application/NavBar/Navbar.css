@@ -2,10 +2,7 @@
 
 .navigation-bar {
     font-family: 'Manjari';
-    background-color: rgba(139, 111, 180, 0.5);
-    -webkit-box-shadow: 0px -2px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -2px 15px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px -2px 15px 0px rgba(0,0,0,0.75);
+    background-color: rgba(126,85,180,1);
 }   
 
 .navbar {

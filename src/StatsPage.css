@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
+.track-stats {
+    background-color: rgba(126,85,180,1);
+    border-radius: 10px;
+    font-family: 'Manjari';
+}
+
 .nav-item {
     font-weight: 800;
     color: #ffffff;
@@ -54,11 +60,6 @@
 .card {
     border-radius: 10px;
     border: none;
-}
-
-.track-stats {
-    font-family: 'Manjari';
-    margin-bottom: 100px;
 }
 
 .list-group-item {

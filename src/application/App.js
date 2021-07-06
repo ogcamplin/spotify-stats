@@ -1,29 +1,18 @@
 import { useEffect, useContext, useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
-import { store } from './context/store';
-import {authorise, reauthorise} from './context/actions'
-import ReactGA from 'react-ga';
-import { createBrowserHistory } from 'history';
+import { store } from '../context/store';
+import {authorise, reauthorise} from '../context/actions'
 
 /* Pages */
-import Home from './pages/Home/Home';
-import ArtistStatistics from './pages/ArtistStats/ArtistStats';
-import TrackStatistics from './pages/TrackStats/TrackStats';
-import Privacy from './pages/Privacy'
+import Home from '../home/Home';
+import ArtistStatistics from '../artists/ArtistStats';
+import TrackStatistics from '../tracks/TrackStats';
 
 /* Components */
 import PrivateRoute from './PrivateRoute';
-import Navbar from './components/NavBar/Navbar'; 
-import Spinner from'./components/Spinner/Spinner';
-import Footer from './components/Footer/Footer';
-
-const trackingId = 'UA-199356526-1'
-const history = createBrowserHistory();
-ReactGA.initialize(trackingId);
-history.listen(location => {
-  ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
-});
+import Navbar from './NavBar/Navbar'; 
+import Spinner from'./Spinner/Spinner';
+import Footer from './Footer/Footer';
 
 /**
  * Base container component for spotify stats app
@@ -84,10 +73,8 @@ const App = (props) => {
         <Route exact path="/" component={ Home } />
         <PrivateRoute path="/tracks" component={ TrackStatistics }/>
         <PrivateRoute path="/artists" component={ ArtistStatistics } />
-        <Route path="/privacy" component={ Privacy } />
         <Footer />
       </Switch>
-      
     );
 }
 
