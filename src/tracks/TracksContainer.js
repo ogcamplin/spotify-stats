@@ -62,7 +62,6 @@ const TrackCollapsed = ({track, rank, onExpand, range }) => {
     }
 
     return (
-        
         <div key={rank} className='col-lg-3 col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center mt-5'>
             <motion.div variants={variants} onClick={()=>onExpand(track)} ref={ref} initial='hidden' animate={controls} >
                 <motion.div className='artist-rank'><h1>{ rank }</h1></motion.div>

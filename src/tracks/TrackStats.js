@@ -5,6 +5,7 @@ import { NavLink, useRouteMatch, Route, Switch } from 'react-router-dom';
 import { fetchTracks } from '../context/actions.js'
 import { motion } from 'framer-motion';
 import TracksContainer from './TracksContainer';
+import Spinner from '../application/Spinner/Spinner'
 
 /* Styles */
 import '../StatsPage.css';
@@ -31,21 +32,21 @@ const TrackStatistics = () => {
     }
 
     return isLoading ?
-        ( <div className='spinner-border' style = {{ position: "fixed", top: "50%", left: "50%", color: '#ffffff' }} /> )
+        ( <Spinner /> )
         : 
         (
-        <div className='container track-stats my-5'>
-            <h1 className='display-6 pg-title py-2'>TRACKS</h1>
+        <div className='container my-5 track-stats'>
+            <h1 className='display-6 pg-title pt-2 pb-3'>TRACKS</h1>
 
             <motion.div className='nav nav-fill justify-content-center'>
                 <motion.div className='nav-item'>
-                    <NavLink className='nav-link' to={`${match.url}/short`}><motion.div variants={variants} whileHover='hover'>1 Month</motion.div></NavLink>
+                    <NavLink className='nav-link' to={`${match.url}/short`}><motion.div className='pt-1' variants={variants} whileHover='hover'>1 Month</motion.div></NavLink>
                 </motion.div>
                 <motion.div className='nav-item'>
-                    <NavLink className='nav-link' to={`${match.url}/medium`}><motion.div variants={variants} whileHover='hover'>6 Months</motion.div></NavLink>
+                    <NavLink className='nav-link' to={`${match.url}/medium`}><motion.div className='pt-1' variants={variants} whileHover='hover'>6 Months</motion.div></NavLink>
                 </motion.div>
                 <motion.div className='nav-item'>
-                    <NavLink className='nav-link' to={`${match.url}/long`}><motion.div variants={variants} whileHover='hover'>All Time</motion.div></NavLink>
+                    <NavLink className='nav-link' to={`${match.url}/long`}><motion.div className='pt-1' variants={variants} whileHover='hover'>All Time</motion.div></NavLink>
                 </motion.div>
             </motion.div>
 

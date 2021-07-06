@@ -1,10 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import './Home.css'
+/* Components */
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
 import { store } from '../context/store';
 import { fetchUser } from '../context/actions'
 import Spinner from '../application/Spinner/Spinner'
+
+/* Styles */
+import 'bootstrap/dist/css/bootstrap.css';
+import './Home.css'
 
 const doAuthenticate = () => {
     const scopes = 'user-top-read user-read-private user-read-recently-played';
@@ -65,9 +68,9 @@ const Home = () => {
                         </motion.div> 
                     ) : (
                         <div className='my-5 d-flex flex-column'>
-                            <div className='d-flex flex-row justify-content-between'>
-                                <h1 className='heading-1 text-lg-start'>Welcome.</h1>
-                                <img className='mr-5' src={ process.env.PUBLIC_URL + '/sound.png'} alt='sound' height='400' width='400' />
+                            <div className='d-flex flex-row justify-content-start align-items-center'>
+                                <h1 className='heading-1 text-lg-start mr-5'>Welcome.</h1>
+                                <img src={ process.env.PUBLIC_URL + '/sound.png'} alt='sound' height='400' width='400' />
                             </div>
                             <div className='d-flex flex-column'>
                                 <h4>

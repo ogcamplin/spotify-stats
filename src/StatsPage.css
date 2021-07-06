@@ -2,10 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
+* {
+    font-family: 'Manjari';
+}
+
 .track-stats {
     background-color: rgba(126,85,180,1);
     border-radius: 10px;
-    font-family: 'Manjari';
 }
 
 .nav-item {
@@ -25,7 +28,7 @@
 }
 
 .nav > .nav-item > .active {
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
 }
 
 .btn-primary {

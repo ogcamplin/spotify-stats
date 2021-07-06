@@ -27,7 +27,6 @@
 .heading-1 {
     color: #ffffff;
     font-size: 80px;
-    margin: auto;
 }
 
 h2 {
@@ -88,5 +87,9 @@ h4 {
 
     .start-button {
         font-size: 20px;
+    }
+
+    .sound-img {
+        display: block
     }
 }
