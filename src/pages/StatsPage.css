@@ -7,16 +7,25 @@
 }
 
 .track-stats {
-    background-color: rgba(126,85,180,1);
+    border-radius: 10px;
+}
+
+.time-text {
+    font-family: 'Fredoka One';
+    font-size: 22px;
+}
+
+.date-nav {
+    background-color: #1DB954;
+    padding: 10px 3px;
     border-radius: 10px;
 }
 
 .nav-item {
-    font-weight: 800;
-    color: #ffffff;
-    border-bottom: 2px solid transparent;
+    color: #1DB954;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 50px;
 }
 
 .nav-link {
@@ -25,32 +34,11 @@
 
 .nav-item > .nav-link {
     color: #ffffff;
+    border-radius: 10px;
 }
 
 .nav > .nav-item > .active {
-    border-bottom: 3px solid #ffffff;
-}
-
-.btn-primary {
-    background-color: #F45866;
-    border-color: #F45866;
-}
-
-.btn-primary:hover {
-    background-color: #F45866;
-    border-color: #F45866;
-}
-
-.show > .btn-primary.dropdown-toggle {
-    box-shadow: #F45866;
-    background-color: #F45866;
-    border-color: #F45866;
-    background-color: #F45866;
-}
-
-
-.time-dropdown {
-    font-family: 'Fredoka One';
+    border: 5px solid #ffffff;
 }
 
 .pg-title {
@@ -70,15 +58,6 @@
     padding-right: 0;
 }
 
-.rank-num {
-    border-radius: 6px;
-    border: 4px solid rgba(170,135,222,1);
-    text-align: center;
-    color: #ffffff;
-    background-color: rgba(170,135,222,1);
-    height: 30px; 
-    width: 30px;
-}
 
 .track-img {
     border-radius: 10px;

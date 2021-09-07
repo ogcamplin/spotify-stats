@@ -2,7 +2,7 @@
 
 .navigation-bar {
     font-family: 'Manjari';
-    background-color: rgba(126,85,180,1);
+    background-color: rgba(30,39,43,1);
 }   
 
 .navbar, .navbar-brand, .navbar-brand:hover {
@@ -12,6 +12,7 @@
 .nav-text {
     font-size: larger;
     font-weight: bolder;
+    margin-right: 15px;
 }
 
 .nav-img {

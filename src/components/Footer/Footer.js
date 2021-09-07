@@ -5,7 +5,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className='navbar fixed-bottom footer'>
-      <div className='nav-item'>© Oscar Camplin</div>
+      <div>© Oscar Camplin</div>
     </div>
   );
 }

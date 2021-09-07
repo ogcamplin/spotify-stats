@@ -25,8 +25,8 @@ const TrackStatistics = () => {
 
   const variants = {
     hover: {
-      scale: 1.3,
-      originY: 1,
+      originY: 1.1,
+      scale: 1.2,
       transition: { type: 'spring', duration: 0.5 },
     },
   };
@@ -34,27 +34,27 @@ const TrackStatistics = () => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className='container my-5 track-stats'>
-      <h1 className='display-6 pg-title pt-2 pb-3'>TRACKS</h1>
+    <div className='container track-stats'>
+      <h1 className='display-6 pg-title mt-5 mb-5'>TRACKS</h1>
 
-      <motion.div className='nav nav-fill justify-content-center'>
+      <motion.div className='nav nav-fill justify-content-center date-nav'>
         <motion.div className='nav-item'>
           <NavLink className='nav-link' to={`${match.url}/short`}>
-            <motion.div className='pt-1' variants={variants} whileHover='hover'>
+            <motion.div className='pt-1 time-text' variants={variants} whileHover='hover'>
               1 Month
             </motion.div>
           </NavLink>
         </motion.div>
         <motion.div className='nav-item'>
           <NavLink className='nav-link' to={`${match.url}/medium`}>
-            <motion.div className='pt-1' variants={variants} whileHover='hover'>
+            <motion.div className='pt-1 time-text' variants={variants} whileHover='hover'>
               6 Months
             </motion.div>
           </NavLink>
         </motion.div>
         <motion.div className='nav-item'>
-          <NavLink className='nav-link' to={`${match.url}/long`}>
-            <motion.div className='pt-1' variants={variants} whileHover='hover'>
+          <NavLink className='nav-link ' to={`${match.url}/long`}>
+            <motion.div className='pt-1 time-text' variants={variants} whileHover='hover'>
               All Time
             </motion.div>
           </NavLink>
