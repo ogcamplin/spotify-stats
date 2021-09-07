@@ -1,17 +1,16 @@
 /* Components */
-import React, { useContext } from 'react'
-import { Redirect, Route } from 'react-router-dom'
-import { store } from '../context/store'
+import React, { useContext } from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import { store } from '../context/store';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-
   const context = useContext(store);
-  const { isAuthed } = context.state; 
+  const { isAuthed } = context.state;
 
   return (
     <Route
       {...rest}
-      render={props =>
+      render={(props) =>
         isAuthed ? (
           <Component {...props} />
         ) : (
@@ -19,7 +18,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         )
       }
     />
-  )
-}
+  );
+};
 
-export default PrivateRoute
+export default PrivateRoute;

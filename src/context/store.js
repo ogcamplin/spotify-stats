@@ -1,4 +1,4 @@
-import React, {createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { reducer } from './reducer';
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
   user: null,
   top_tracks: null,
   top_artists: null,
-  recently_played: null
+  recently_played: null,
 };
 
 const store = createContext(initialState);
@@ -20,4 +20,4 @@ const StateProvider = ({ children }) => {
   return <Provider value={{ state, dispatch }}>{children}</Provider>;
 };
 
-export { store, StateProvider }
+export { store, StateProvider };

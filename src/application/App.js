@@ -1,7 +1,7 @@
 import { useEffect, useContext, useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
 import { store } from '../context/store';
-import {authorise, reauthorise} from '../context/actions'
+import { authorise, reauthorise } from '../context/actions';
 
 /* Pages */
 import Home from '../home/Home';
@@ -10,8 +10,8 @@ import TrackStatistics from '../tracks/TrackStats';
 
 /* Components */
 import PrivateRoute from './PrivateRoute';
-import Navbar from './NavBar/Navbar'; 
-import Spinner from'./Spinner/Spinner';
+import Navbar from './NavBar/Navbar';
+import Spinner from './Spinner/Spinner';
 import Footer from './Footer/Footer';
 
 /**
@@ -20,62 +20,62 @@ import Footer from './Footer/Footer';
 const App = (props) => {
   const context = useContext(store);
   const { state } = context;
-  const [ isLoading, setLoading ] = useState(true);
-  
-  useEffect(() => { 
-      /**
-       * Tries to reauthorise user if they are not logged in.
-       */
-      if(!state.isAuthed) {
-        reauthorise(context);
-        setLoading(false);
-      } else {
-        setLoading(false);
-      }
+  const [isLoading, setLoading] = useState(true);
 
-      /**
-       * Gets access token and dispatches context action to store it.
-       */
-      const handleCallback = () => {
-        const params = getHashParams();
+  useEffect(() => {
+    /**
+     * Tries to reauthorise user if they are not logged in.
+     */
+    if (!state.isAuthed) {
+      reauthorise(context);
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
 
-        if(params.access_token) {
-          authorise(context, params, setLoading);
-          props.history.push('/')
-        }
-        setLoading(false);
-        
+    /**
+     * Gets access token and dispatches context action to store it.
+     */
+    const handleCallback = () => {
+      const params = getHashParams();
+
+      if (params.access_token) {
+        authorise(context, params, setLoading);
+        props.history.push('/');
       }
-      handleCallback();
-      document.body.style.zoom = '70%';
-  }, [context, state, props]) 
+      setLoading(false);
+    };
+    handleCallback();
+    document.body.style.zoom = '70%';
+  }, [context, state, props]);
 
   /**
    * Gets the access token from querystring of URL for client side use.
    */
   const getHashParams = () => {
     var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    e = r.exec(q)
+    var e,
+      r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1);
+    e = r.exec(q);
     while (e) {
-       hashParams[e[1]] = decodeURIComponent(e[2]);
-       e = r.exec(q);
+      hashParams[e[1]] = decodeURIComponent(e[2]);
+      e = r.exec(q);
     }
     return hashParams;
-  } 
+  };
 
-  return isLoading? 
-    <Spinner /> : 
-    (
-      <Switch>
-        <Navbar />
-        <Route exact path="/" component={ Home } />
-        <PrivateRoute path="/tracks" component={ TrackStatistics }/>
-        <PrivateRoute path="/artists" component={ ArtistStatistics } />
-        <Footer />
-      </Switch>
-    );
-}
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <Switch>
+      <Navbar />
+      <Route exact path='/' component={Home} />
+      <PrivateRoute path='/tracks' component={TrackStatistics} />
+      <PrivateRoute path='/artists' component={ArtistStatistics} />
+      <Footer />
+    </Switch>
+  );
+};
 
 export default App;
