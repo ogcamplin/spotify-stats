@@ -1,9 +1,9 @@
 /* Components */
 import { motion } from 'framer-motion';
 import { useContext, useEffect, useState } from 'react';
-import { store } from '../context/store';
-import { fetchUser } from '../context/actions';
-import Spinner from '../application/Spinner/Spinner';
+import { store } from '../../context/store';
+import { fetchUser } from '../../context/actions';
+import Spinner from '../../components/Spinner/Spinner';
 
 /* Styles */
 import 'bootstrap/dist/css/bootstrap.css';

@@ -1,27 +1,30 @@
 /* Components */
-import React, { useEffect, useContext, useState } from 'react';
-import { store } from '../context/store';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink, useRouteMatch, Route, Switch } from 'react-router-dom';
-import { fetchTracks } from '../context/actions.js';
+import { store } from '../../context/store';
 import { motion } from 'framer-motion';
-import TracksContainer from './TracksContainer';
-import Spinner from '../application/Spinner/Spinner';
+import { fetchArtists } from '../../context/actions';
+import ArtistsContainer from './ArtistsContainer';
+import Spinner from '../../components/Spinner/Spinner';
 
 /* Styles */
-import '../StatsPage.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../StatsPage.css';
 
-const TrackStatistics = () => {
+const ArtistStatistics = () => {
   const context = useContext(store);
   const match = useRouteMatch();
   const [isLoading, setLoading] = useState(true);
 
+  /**
+   * Gets artist data from API if context does not already contain it
+   */
   useEffect(() => {
-    fetchTracks(context, setLoading);
+    fetchArtists(context, setLoading);
     if (!context.state.isAuthed) {
       setLoading(false);
     }
-  }, [setLoading, context]);
+  }, [isLoading, context]);
 
   const variants = {
     hover: {
@@ -34,8 +37,8 @@ const TrackStatistics = () => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className='container my-5 track-stats'>
-      <h1 className='display-6 pg-title pt-2 pb-3'>TRACKS</h1>
+    <div className='container track-stats my-5'>
+      <h1 className='display-6 pg-title pt-2 pb-3'>ARTISTS</h1>
 
       <motion.div className='nav nav-fill justify-content-center'>
         <motion.div className='nav-item'>
@@ -62,11 +65,10 @@ const TrackStatistics = () => {
       </motion.div>
 
       <Switch>
-        <Route path={`${match.path}/:range`} component={TracksContainer} />
-        <Route path={`${match.path}`} component={TracksContainer} />
+        <Route path={`${match.path}/:range`} component={ArtistsContainer} />
       </Switch>
     </div>
   );
 };
 
-export default TrackStatistics;
+export default ArtistStatistics;

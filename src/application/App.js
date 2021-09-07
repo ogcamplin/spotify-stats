@@ -4,15 +4,15 @@ import { store } from '../context/store';
 import { authorise, reauthorise } from '../context/actions';
 
 /* Pages */
-import Home from '../home/Home';
-import ArtistStatistics from '../artists/ArtistStats';
-import TrackStatistics from '../tracks/TrackStats';
+import Home from '../pages/home/Home';
+import ArtistStatistics from '../pages/artists/ArtistStats';
+import TrackStatistics from '../pages/tracks/TrackStats';
 
 /* Components */
 import PrivateRoute from './PrivateRoute';
-import Navbar from './NavBar/Navbar';
-import Spinner from './Spinner/Spinner';
-import Footer from './Footer/Footer';
+import Navbar from '../components/NavBar/Navbar';
+import Spinner from '../components/Spinner/Spinner';
+import Footer from '../components/Footer/Footer';
 
 /**
  * Base container component for spotify stats app

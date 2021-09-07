@@ -1,6 +1,6 @@
 /* Components */
 import { useContext, useEffect, useState } from 'react';
-import { store } from '../context/store';
+import { store } from '../../context/store';
 import { useParams } from 'react-router-dom';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
