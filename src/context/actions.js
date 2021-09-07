@@ -1,5 +1,10 @@
 import Spotify from 'spotify-web-api-js';
 
+/**
+ * Authorises user by using spotify auth flow.
+ * 
+ * @param {*} context 
+ */
 const authorise = (context, params, setLoading) => {
   const { dispatch, state } = context;
   const { access_token, expires_in } = params;
@@ -20,6 +25,11 @@ const authorise = (context, params, setLoading) => {
   }
 };
 
+/**
+ * Reauthorises user by using spotify auth flow.
+ * 
+ * @param {*} context 
+ */
 const reauthorise = (context) => {
   const { dispatch } = context;
 
@@ -39,6 +49,9 @@ const reauthorise = (context) => {
   }
 };
 
+/**
+ * Fetches the spotify use from the spotify API an dispatchers action to add user to store or reauthenticate.
+ */
 const fetchUser = (context, setLoading) => {
   const { dispatch, state } = context;
   const { spotifyApi } = state;
@@ -60,6 +73,12 @@ const fetchUser = (context, setLoading) => {
   }
 };
 
+/**
+ * Fetches the users top tracks from the spotify api and updates the store with this data.
+ * 
+ * @param {} context 
+ * @param {*} setLoading 
+ */
 const fetchTracks = (context, setLoading) => {
   const { dispatch, state } = context;
   const { spotifyApi } = state;
@@ -91,6 +110,12 @@ const fetchTracks = (context, setLoading) => {
   }
 };
 
+/**
+ * Fetches the users top artists from the spotify api and updates the store with this data.
+ * 
+ * @param {} context 
+ * @param {*} setLoading 
+ */
 const fetchArtists = (context, setLoading) => {
   const { dispatch, state } = context;
   const { spotifyApi } = state;
@@ -122,6 +147,12 @@ const fetchArtists = (context, setLoading) => {
   }
 };
 
+/**
+ * Fetches the users recent songs from the spotify api and updates the store with this data.
+ * 
+ * @param {} context 
+ * @param {*} setLoading 
+ */
 const fetchRecent = (context) => {
   const { dispatch, state } = context;
   const { spotifyApi } = state;
