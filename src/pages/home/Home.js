@@ -81,10 +81,12 @@ const Home = () => {
             </motion.h3>
 
             <div className='d-flex justify-content-center my-5'>
+              { user.images[0].url? 
               <div
                 className='profile-image'
                 style={{ background: `url(${user.images[0].url}) 50% 50%` }}
-              ></div>
+              ></div> : <div></div>
+              }
             </div>
           </motion.div>
         </motion.div>
